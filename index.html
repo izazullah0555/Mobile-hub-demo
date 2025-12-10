@@ -3,29 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Irfan Mobile Shop Demo</title>
+<title>Unknown Mobile</title>
 <style>
 body { margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:white; }
 header { background:#D30000; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
-.logo { font-weight:bold; font-size:20px; color:white; }
+.logo img { width:50px; height:50px; border-radius:6px; }
 .shop-info { display:flex; flex-direction:column; font-size:14px; }
 .shop-info div { margin:2px 0; }
-.btn-whatsapp { background:#25D366; color:white; padding:10px 15px; border-radius:6px; text-decoration:none; font-weight:bold; }
+.btn-whatsapp { background:#25D366; color:white; padding:10px 15px; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:5px; display:inline-block; }
 .main { padding:20px; }
-.products { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px; }
-.card { background:#111; border:1px solid #D30000; border-radius:10px; padding:15px; width:250px; text-align:center; }
-.card img { width:200px; height:auto; border-radius:6px; }
+.categories { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px; }
+.card { background:#111; border:1px solid #D30000; border-radius:10px; padding:15px; width:200px; text-align:center; }
+.card img { width:150px; height:auto; border-radius:6px; }
 .card h3 { margin:10px 0 5px; font-weight:bold; }
-.card p { margin:5px 0; color:#ccc; }
+.payment { background:#111; border:1px solid #D30000; border-radius:10px; padding:15px; margin-top:30px; text-align:center; max-width:400px; margin-left:auto; margin-right:auto;}
+.payment h3 { margin-bottom:10px; font-weight:bold; }
+.payment div { margin:5px 0; }
 .footer { text-align:center; padding:15px; color:#888; margin-top:30px; }
-.badge { background:#D30000; padding:4px 8px; border-radius:5px; font-size:13px; display:inline-block; margin-top:5px; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">📱 Irfan Mobile</div>
+  <div class="logo"><img src="https://dummyimage.com/50x50/ffffff/000000&text=Logo" alt="Shop Logo"></div>
   <div class="shop-info">
+    <div>Shop: Unknown Mobile</div>
     <div>Address: Karachi, Pakistan</div>
     <div>Mobile: +92 334 8337837</div>
     <a class="btn-whatsapp" href="https://wa.me/923348337837?text=Hi%2C%20I%20want%20to%20order" target="_blank">Order Now WhatsApp</a>
@@ -33,50 +35,48 @@ header { background:#D30000; padding:15px 20px; display:flex; justify-content:sp
 </header>
 
 <main class="main">
-  <h2 style="text-align:center; font-weight:bold;">Irfan Mobile • All Models Available</h2>
+  <h2 style="text-align:center; font-weight:bold;">Available Mobile Brands</h2>
 
-  <div class="products">
+  <div class="categories">
 
     <div class="card">
-      <img src="https://dummyimage.com/250x300/D30000/fff&text=iPhone+17+Pro" alt="iPhone 17 Pro">
-      <h3>iPhone 17 Pro</h3>
-      <p>Latest Series</p>
-      <div class="badge">Available</div>
+      <img src="https://dummyimage.com/150x150/ffffff/000000&text=Oppo" alt="Oppo">
+      <h3>Oppo</h3>
     </div>
 
     <div class="card">
-      <img src="https://dummyimage.com/250x300/D30000/fff&text=iPhone+17+Pro+Max" alt="iPhone 17 Pro Max">
-      <h3>iPhone 17 Pro Max</h3>
-      <p>New Arrival</p>
-      <div class="badge">Available</div>
+      <img src="https://dummyimage.com/150x150/ffffff/000000&text=Vivo" alt="Vivo">
+      <h3>Vivo</h3>
     </div>
 
     <div class="card">
-      <img src="https://dummyimage.com/250x300/D30000/fff&text=Samsung+Galaxy+S23+Ultra" alt="Samsung S23 Ultra">
-      <h3>Samsung Galaxy S23 Ultra</h3>
-      <p>All models available</p>
-      <div class="badge">Available</div>
+      <img src="https://dummyimage.com/150x150/ffffff/000000&text=Infinix" alt="Infinix">
+      <h3>Infinix</h3>
     </div>
 
     <div class="card">
-      <img src="https://dummyimage.com/250x300/D30000/fff&text=Vivo+Y+Series" alt="Vivo Y Series">
-      <h3>Vivo Y Series</h3>
-      <p>Budget & Mid-range</p>
-      <div class="badge">Available</div>
+      <img src="https://dummyimage.com/150x150/ffffff/000000&text=iPhone" alt="iPhone">
+      <h3>iPhone</h3>
     </div>
 
     <div class="card">
-      <img src="https://dummyimage.com/250x300/D30000/fff&text=Oppo+Reno+Series" alt="Oppo Reno">
-      <h3>Oppo Reno Series</h3>
-      <p>Latest Arrivals</p>
-      <div class="badge">Available</div>
+      <img src="https://dummyimage.com/150x150/ffffff/000000&text=Samsung" alt="Samsung">
+      <h3>Samsung</h3>
     </div>
 
   </div>
+
+  <div class="payment">
+    <h3>Payment Methods</h3>
+    <div>Easypaisa: ____________</div>
+    <div>JazzCash: ____________</div>
+    <div>Bank Account Name & Number: ____________</div>
+  </div>
+
 </main>
 
 <footer class="footer">
-  © Irfan Mobile Shop • JazzCash & Easypaisa Accepted
+  © Unknown Mobile • JazzCash & Easypaisa Accepted
 </footer>
 
 </body>
