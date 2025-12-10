@@ -1,161 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Mobile Hub — Demo</title>
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irfan Mobile Shop Demo</title>
 <style>
-  :root{
-    --bg:#070707; --accent:#e5362b; --muted:#cfcfcf; --card:#111;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#fff;background:linear-gradient(180deg,#070707 0%, #0b0b0b 100%);}
-  header{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,var(--card),#0a0a0a);border-bottom:1px solid rgba(255,255,255,0.04)}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{width:46px;height:46px;background:linear-gradient(135deg,#fff0,#fff2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px}
-  h1{margin:0;font-size:18px}
-  .top-actions{display:flex;gap:8px;align-items:center}
-  .btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;font-weight:600;text-decoration:none}
-  .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted)}
-  .hero{padding:28px 20px;display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
-  .hero-left{max-width:900px}
-  .tag{display:inline-block;background:rgba(229,54,43,0.12);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:10px}
-  .headline{font-size:26px;margin:6px 0 12px}
-  .sub{color:var(--muted);margin-bottom:8px}
-  .features{display:flex;gap:12px;flex-wrap:wrap}
-  .feature{background:#0d0d0d;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-size:14px;color:var(--muted)}
-  main{padding:12px 20px}
-  .catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
-  .card{background:linear-gradient(180deg,#0f0f0f,#0b0b0b);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px;min-height:220px}
-  .img{height:140px;border-radius:8px;background-size:cover;background-position:center;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-  .title{font-weight:700}
-  .brandline{font-size:13px;color:var(--muted)}
-  .price{font-size:16px;font-weight:800;color:var(--accent)}
-  .actions{margin-top:auto;display:flex;gap:8px}
-  .wh{flex:1;text-align:center;background:linear-gradient(90deg,var(--accent),#ff2f2f);padding:10px;border-radius:8px;color:#fff;font-weight:700;text-decoration:none}
-  .muted{font-size:13px;color:var(--muted)}
-  footer{padding:18px 20px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
-  .badge{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-weight:700;color:var(--muted)}
-  @media(min-width:900px){
-    .hero{grid-template-columns:1fr 420px}
-    .hero-right{padding:12px;background:linear-gradient(180deg,#0b0b0b,#0a0a0a);border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-  }
-  /* small helpers */
-  .small{font-size:13px}
+body { margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:white; }
+header { background:#D30000; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+.logo { font-weight:bold; font-size:20px; color:white; }
+.shop-info { display:flex; flex-direction:column; font-size:14px; }
+.shop-info div { margin:2px 0; }
+.btn-whatsapp { background:#25D366; color:white; padding:10px 15px; border-radius:6px; text-decoration:none; font-weight:bold; }
+.main { padding:20px; }
+.products { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px; }
+.card { background:#111; border:1px solid #D30000; border-radius:10px; padding:15px; width:250px; text-align:center; }
+.card img { width:200px; height:auto; border-radius:6px; }
+.card h3 { margin:10px 0 5px; font-weight:bold; }
+.card p { margin:5px 0; color:#ccc; }
+.footer { text-align:center; padding:15px; color:#888; margin-top:30px; }
+.badge { background:#D30000; padding:4px 8px; border-radius:5px; font-size:13px; display:inline-block; margin-top:5px; }
 </style>
 </head>
 <body>
+
 <header>
-  <div class="brand">
-    <div class="logo">MH</div>
-    <div>
-      <h1>Mobile Hub — Demo</h1>
-      <div class="small muted">Karachi • Demo • English</div>
-    </div>
-  </div>
-  <div class="top-actions">
-    <div class="badge">All Models Available</div>
-    <a class="btn" href="https://wa.me/923348337837?text=Hi%20I%20want%20to%20order%20a%20mobile">Order on WhatsApp</a>
+  <div class="logo">📱 Irfan Mobile</div>
+  <div class="shop-info">
+    <div>Address: Karachi, Pakistan</div>
+    <div>Mobile: +92 334 8337837</div>
+    <a class="btn-whatsapp" href="https://wa.me/923348337837?text=Hi%2C%20I%20want%20to%20order" target="_blank">Order Now WhatsApp</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="tag">Mobile Shop • Demo</div>
-    <div class="headline">Latest mobiles — iPhone 17 Pro / 17 Pro Max & full brand lineup</div>
-    <div class="sub">Premium demo site with product slider, repair services, and direct WhatsApp ordering.</div>
-    <div class="features">
-      <div class="feature">WhatsApp orders (+923348337837)</div>
-      <div class="feature">Easypaisa & JazzCash (Text-only)</div>
-      <div class="feature">Responsive • Fast • Editable</div>
-    </div>
-  </div>
+<main class="main">
+  <h2 style="text-align:center; font-weight:bold;">Irfan Mobile • All Models Available</h2>
 
-  <aside class="hero-right">
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="font-weight:800">Featured: iPhone 17 Pro Max</div>
-      <div style="color:var(--muted)">Top seller — demo unit</div>
-      <div style="margin-top:10px;background:#0b0b0b;padding:12px;border-radius:8px">
-        <div style="font-weight:800">Contact</div>
-        <div class="muted">WhatsApp: +92 334 8337837</div>
-        <div class="muted">City: Karachi (Demo)</div>
-      </div>
-    </div>
-  </aside>
-</section>
+  <div class="products">
 
-<main>
-  <h2 style="margin:6px 0">Products</h2>
-  <div class="catalog">
-
-    <!-- iPhone 17 Pro -->
     <div class="card">
-      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1585386959984-a415522c6e9f?q=80&w=800&auto=format&fit=crop&s=placeholder');"></div>
-      <div class="title">iPhone 17 Pro</div>
-      <div class="brandline">Apple • iPhone 17 Series</div>
-      <div class="price">PKR 420,000</div>
-      <div class="muted small">New arrival — demo price</div>
-      <div class="actions">
-        <a class="wh" href="https://wa.me/923348337837?text=I%20want%20to%20order%20iPhone%2017%20Pro">Order on WhatsApp</a>
-      </div>
+      <img src="https://dummyimage.com/250x300/D30000/fff&text=iPhone+17+Pro" alt="iPhone 17 Pro">
+      <h3>iPhone 17 Pro</h3>
+      <p>Latest Series</p>
+      <div class="badge">Available</div>
     </div>
 
-    <!-- iPhone 17 Pro Max -->
     <div class="card">
-      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop&s=placeholder');"></div>
-      <div class="title">iPhone 17 Pro Max</div>
-      <div class="brandline">Apple • iPhone 17 Series</div>
-      <div class="price">PKR 520,000</div>
-      <div class="muted small">Limited stock — demo</div>
-      <div class="actions"><a class="wh" href="https://wa.me/923348337837?text=I%20want%20to%20order%20iPhone%2017%20Pro%20Max">Order on WhatsApp</a></div>
+      <img src="https://dummyimage.com/250x300/D30000/fff&text=iPhone+17+Pro+Max" alt="iPhone 17 Pro Max">
+      <h3>iPhone 17 Pro Max</h3>
+      <p>New Arrival</p>
+      <div class="badge">Available</div>
     </div>
 
-    <!-- Samsung example -->
     <div class="card">
-      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop&s=placeholder');"></div>
-      <div class="title">Samsung Galaxy S23 Ultra</div>
-      <div class="brandline">Samsung • All models available</div>
-      <div class="price">PKR 295,000</div>
-      <div class="muted small">All Samsung models available on request</div>
-      <div class="actions"><a class="wh" href="https://wa.me/923348337837?text=I%20need%20Samsung%20Galaxy%20S23%20Ultra">Order on WhatsApp</a></div>
+      <img src="https://dummyimage.com/250x300/D30000/fff&text=Samsung+Galaxy+S23+Ultra" alt="Samsung S23 Ultra">
+      <h3>Samsung Galaxy S23 Ultra</h3>
+      <p>All models available</p>
+      <div class="badge">Available</div>
     </div>
 
-    <!-- Vivo example -->
     <div class="card">
-      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1523475496153-3d6cc3a64f7c?q=80&w=800&auto=format&fit=crop&s=placeholder');"></div>
-      <div class="title">Vivo Y Series — Latest</div>
-      <div class="brandline">Vivo • All models available</div>
-      <div class="price">PKR 45,000</div>
-      <div class="muted small">Budget & mid-range models</div>
-      <div class="actions"><a class="wh" href="https://wa.me/923348337837?text=I%20want%20Vivo%20models">Order on WhatsApp</a></div>
+      <img src="https://dummyimage.com/250x300/D30000/fff&text=Vivo+Y+Series" alt="Vivo Y Series">
+      <h3>Vivo Y Series</h3>
+      <p>Budget & Mid-range</p>
+      <div class="badge">Available</div>
     </div>
 
-    <!-- Oppo example -->
     <div class="card">
-      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop&s=placeholder');"></div>
-      <div class="title">Oppo Reno Series</div>
-      <div class="brandline">Oppo • All models available</div>
-      <div class="price">PKR 58,000</div>
-      <div class="muted small">New arrivals ready</div>
-      <div class="actions"><a class="wh" href="https://wa.me/923348337837?text=I%20want%20Oppo%20models">Order on WhatsApp</a></div>
+      <img src="https://dummyimage.com/250x300/D30000/fff&text=Oppo+Reno+Series" alt="Oppo Reno">
+      <h3>Oppo Reno Series</h3>
+      <p>Latest Arrivals</p>
+      <div class="badge">Available</div>
     </div>
 
   </div>
-
-  <section style="margin-top:20px;background:linear-gradient(180deg,#0b0b0b,#090909);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)">
-    <h3 style="margin:0 0 6px">Repair Services</h3>
-    <div class="muted">Screen replacement • Battery replacement • Software & unlocking • Quick diagnostics</div>
-    <div style="margin-top:10px">
-      <a class="btn" href="https://wa.me/923348337837?text=I%20want%20repair%20service">Request Repair via WhatsApp</a>
-    </div>
-  </section>
 </main>
 
-<footer>
-  <div>© Mobile Hub — Demo</div>
-  <div class="muted">Contact: +92 334 8337837 • Karachi</div>
+<footer class="footer">
+  © Irfan Mobile Shop • JazzCash & Easypaisa Accepted
 </footer>
 
 </body>
-        </html>
+</html>
